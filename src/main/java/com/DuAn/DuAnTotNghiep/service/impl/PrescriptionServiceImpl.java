@@ -112,8 +112,9 @@ public class PrescriptionServiceImpl implements PrescriptionService {
                         Collectors.mapping(PrescriptionMedicines::getMedicines, Collectors.toList())
                 ));
 
+
         return prescriptions.stream()
-                .map(pr->new PrescriptionWithMedicinesResponse(pr,medicineMap.get(pr.getPrescriptionId())))
+                .map(pr->new PrescriptionWithMedicinesResponse(pr,medicineMap.get(pr.getPrescriptionId()),prescriptionMedicines))
                 .collect(Collectors.toList());
 
     }
