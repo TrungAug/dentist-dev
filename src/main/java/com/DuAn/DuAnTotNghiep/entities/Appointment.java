@@ -49,7 +49,7 @@ public class Appointment {
     private AppointmentPatientRecord appointmentPatientRecord;
 
     @OneToMany(mappedBy = "billId")
-    @JsonIgnore
+//    @JsonIgnore
     private List<Bill> bills;
 
     @OneToMany(mappedBy = "appointmentCTResultId")
