@@ -48,8 +48,12 @@ public class Appointment {
     @JoinColumn(name = "appointmentPatientRecordId")
     private AppointmentPatientRecord appointmentPatientRecord;
 
-    @OneToMany(mappedBy = "billId")
+//    @OneToMany(mappedBy = "billId")
 //    @JsonIgnore
+//    private List<Bill> bills;
+
+    @OneToMany(mappedBy = "appointment", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Bill> bills;
 
     @OneToMany(mappedBy = "appointmentCTResultId")
